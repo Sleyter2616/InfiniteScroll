@@ -1,0 +1,31 @@
+.container {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 7px;
+    height: 15px;
+    background: #DFEFFF;
+    color: #3399FF;
+    border-radius: 21px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+.Phone {
+    width: auto;
+    background: #E6DCFF;
+    color: #7C19B4;
+}
+
+.Email {
+    width: auto;
+    background: #FFE3CC;
+    color: #E87919;
+}
+.Default {
+  width: auto;
+  Background: #FFCCCC;
+  color: #E82C19;
+}

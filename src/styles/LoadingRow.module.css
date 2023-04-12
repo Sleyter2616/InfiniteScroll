@@ -1,0 +1,64 @@
+.loadingRow {
+    display: flex;
+  justify-content: space-between;
+  width: 100%;
+  }
+
+  .loadingNameAndLevelLeft {
+    width: 295px;
+    height: 18px;
+    background: linear-gradient(
+      90deg,
+      #eaeaea 26.47%,
+      rgba(234, 234, 234, 0.25) 100%
+    );
+    border-radius: 27px;
+  }
+
+  .loadingContactInfoLeft {
+    width: 340px;
+    height: 14px;
+    background: linear-gradient(
+      90deg,
+      #eaeaea 26.47%,
+      rgba(234, 234, 234, 0.25) 100%
+    );
+    border-radius: 27px;
+  }
+
+  .loadingNameAndLevelRight {
+    width: 118px;
+    height: 17px;
+    background: linear-gradient(
+      90deg,
+      #eaeaea 26.47%,
+      rgba(234, 234, 234, 0.25) 100%
+    );
+    border-radius: 27px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  .loadingContactInfoRight {
+    width: 84px;
+    height: 12px;
+    background: linear-gradient(
+      90deg,
+      #eaeaea 26.47%,
+      rgba(234, 234, 234, 0.25) 100%
+    );
+    border-radius: 27px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 1.5s ease-in-out;
+  }

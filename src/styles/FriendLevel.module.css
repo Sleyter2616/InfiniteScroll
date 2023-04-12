@@ -1,0 +1,24 @@
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 7px;
+    height: 15px;
+    border-radius: 21px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+.close {
+    width: 80px;
+    background: #DFEFFF;
+    color: #3399FF;
+}
+
+.superClose {
+    width: 117px;
+    background: #DCFFE6;
+    color: #19B444;
+  }

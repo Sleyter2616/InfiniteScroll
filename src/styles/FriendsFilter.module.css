@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top:46px;
+    margin-top: 80px;
+    left: 560px;
+  }
+
+  .filter,
+  .filterActive {
+    background-color: transparent;
+    height: 37px;
+    width: 59px;
+    border-radius: 30px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+  }
+
+  .filterActiveCount {
+    background-color: #424242;
+    width: 79px;
+  }
+
+  .filter svg,
+  .filterActive svg {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  .filterActive {
+    background-color: #424242;
+  }
+
+  .filterActive svg {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+
+  .separator {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    color: #D7D7D7;
+    height: 15px;
+  }
+
+  .clearAll {
+    background-color: transparent;
+    border: none;
+    color: #D7D7D7;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+
+  .clearAllActive {
+    color: #3399FF;
+    cursor: pointer;
+  }
+  .popupContainer {
+    position: absolute;
+    top: 173px;
+  }
+
+  .iconAndCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+  }
+
+  .filterCount {
+   color:#FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding-left: 10px;
+  }

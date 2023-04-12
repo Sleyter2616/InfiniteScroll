@@ -1,0 +1,121 @@
+.container {
+  top: 50px;
+  width: 320px;
+  height: 286px;
+  background-color: white;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  height: 59px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.clearAll {
+  color: #D7D7D7;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 16px ;
+}
+
+.clearAllActive {
+  color: #3399FF;
+  cursor: pointer;
+}
+
+.filterTitle {
+  color: #424242;
+  font-family: 'Inter', sans-serif;
+  margin-left: 60px;
+  margin-right: 104px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.closeButton {
+  font-size: 24px;
+  color: #424242;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 16px ;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  margin-bottom: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bottomSectionTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  color: #686868;
+  padding-left: 25px;
+}
+.checkboxTitle{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  color: #424242;
+  padding-left: 25px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #ababab;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+.checkedCheckbox {
+  background-color: #3399ff;
+  border: 1.5px solid #3399ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkmark {
+  color: white;
+  font-size: 16px;
+}
+
+.applyButton {
+  margin: auto ;
+  width: 300px;
+  height: 45px;
+  background-color: #424242;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+

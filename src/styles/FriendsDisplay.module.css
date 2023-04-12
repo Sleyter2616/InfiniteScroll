@@ -1,0 +1,43 @@
+.container {
+    margin-top: 25px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 1050px;
+    border: 1px solid #D7D7D7;
+    border-radius: 6px;
+    padding: 32px 32px;
+    margin-bottom: 15px;
+  }
+
+.rowContent {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    align-items: center;
+}
+
+.contactInfo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ABABAB;
+}
+
+.name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.36px;
+}
+
+.nameAndLevel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,20 @@
+.featuresSection {
+  position: fixed;
+  top: 80px;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+    color: #000000;
+  }

@@ -1,0 +1,27 @@
+.friendInfoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 350px auto;
+    padding: 2rem;
+    border: 1px solid #D7D7D7;
+    border-radius: 6px;
+    max-width: 600px;
+    min-height: 400px;
+}
+
+.friendInfoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 80px);
+}
+
+.backButton{
+  margin-top: 10px;
+  background-color:#0a0a23;
+  color: #fff;
+  border-radius:10px;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+}
