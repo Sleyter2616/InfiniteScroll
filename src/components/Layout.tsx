@@ -9,7 +9,6 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-
 const Layout: FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
   let currentPage:CurrentPage = 'home';

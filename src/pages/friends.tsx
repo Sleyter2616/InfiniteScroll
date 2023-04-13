@@ -6,7 +6,6 @@ import Layout from '@/components/Layout';
 import mockData from '@/mock-data';
 
 export default function Friends() {
-  // Initialize filteredData with mockData and set loading to true for all items
   const initialFilteredData = mockData.map((friend) => ({
     ...friend,
     loading: true,
@@ -20,21 +19,20 @@ export default function Friends() {
 
   const handleApplyFilters = (closeFriends: boolean, reallyCloseFriends: boolean) => {
     let newData = mockData;
-  
+
     if (closeFriends) {
       newData = newData.filter((friend) => friend.friendLevel === 'Close');
     }
-  
+
     if (reallyCloseFriends) {
       newData = newData.filter((friend) => friend.friendLevel === 'Super Close');
     }
-  
-    // Update filteredData with new data and set loading to true for each item
+
     const newDataWithLoading = newData.map((friend) => ({
       ...friend,
       loading: true,
     }));
-    setFilteredData(newDataWithLoading.slice(0, pagination.itemsPerPage));
+    setFilteredData(newDataWithLoading.slice(0, newData.length));
     setPagination((prevState) => ({ ...prevState, page: 1 }));
   };
 
@@ -50,7 +48,6 @@ export default function Friends() {
             const index = Number((entry.target as HTMLElement).dataset.index) || 0;
             console.log('Item in view:', index);
 
-            // Simulate loading after a 1 second delay
             if ((index ) % pagination.itemsPerPage === 0) {
             setTimeout(() => {
               setFilteredData((prevState) => {
