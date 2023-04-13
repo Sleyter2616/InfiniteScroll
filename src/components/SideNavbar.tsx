@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import styles from '../styles/SideNavbar.module.css';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter,  } from 'next/router';
+import Image from 'next/image';
 
 interface NavButtonProps {
   href: string;
@@ -27,15 +28,15 @@ const SideNavbar: FC = () => {
   return (
     <aside className={styles.sideNavbar}>
       <div className={styles.topSection}>
-        <img className={styles.textIcon} src="/clerkie-icon.png" alt="Clerkie icon" />
+        <Image width={24} height={24} className={styles.textIcon} src="/clerkie-icon.png" alt="Clerkie icon" />
         Clerkie Challenge
       </div>
-      <NavButton href="/">
-        <img className={styles.textIcon} src="/home-icon.png" alt="Home icon" />
+      <NavButton href="/home">
+        <Image width={24} height={24} className={styles.textIcon} src="/home-icon.png" alt="Home icon" />
         <span className={styles.navText}>Home</span>
       </NavButton>
       <NavButton href="/friends">
-        <img className={styles.textIcon} src="/friends-icon.png" alt="Friends icon" />
+        <Image width={24} height={24}  className={styles.textIcon} src="/friends-icon.png" alt="Friends icon" />
         <span className={styles.navText}>Friends</span>
       </NavButton>
     </aside>

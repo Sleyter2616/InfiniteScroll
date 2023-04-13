@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import FriendsFilter from '../components/FriendsFilter';
 import FriendsDisplay from '../components/FriendsDisplay';
 import { FriendData } from '@/types';
@@ -12,7 +12,6 @@ export default function Friends() {
   }));
   const [filteredData, setFilteredData] = useState<FriendData[]>(initialFilteredData);
   const [pagination, setPagination] = useState({ page: 1, itemsPerPage: 25 });
-  const [prevIndex, setPrevIndex] = useState(0);
 
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
   const rowRefs = useRef<(HTMLElement | null)[]>([]);
@@ -35,42 +34,37 @@ export default function Friends() {
     setFilteredData(newDataWithLoading.slice(0, newData.length));
     setPagination((prevState) => ({ ...prevState, page: 1 }));
   };
-
   useEffect(() => {
-    if (observer) {
-      observer.disconnect();
-    }
-
     const newObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = Number((entry.target as HTMLElement).dataset.index) || 0;
             console.log('Item in view:', index);
+  
+            const startBatchIndex = Math.floor(index / pagination.itemsPerPage) * pagination.itemsPerPage;
+            const endBatchIndex = startBatchIndex + pagination.itemsPerPage;
+  
+            if (filteredData.slice(startBatchIndex, endBatchIndex).some(item => item.loading)) {
+              setTimeout(() => {
+                setFilteredData((prevState) => {
+                  const updatedData = [...prevState];
 
-            if ((index ) % pagination.itemsPerPage === 0) {
-            setTimeout(() => {
-              setFilteredData((prevState) => {
-                const updatedData = [...prevState];
-                const startBatchIndex = Math.floor(index / pagination.itemsPerPage) * pagination.itemsPerPage;
-                const endBatchIndex = startBatchIndex + pagination.itemsPerPage;
-    
-                for (let i = startBatchIndex; i < endBatchIndex; i++) {
-                  if (updatedData[i]) {
-                    updatedData[i].loading = false;
+                  for (let i = startBatchIndex; i < endBatchIndex; i++) {
+                    if (updatedData[i]) {
+                      updatedData[i].loading = false;
+                    }
                   }
-                }
-    
-                return updatedData;
-              });
-            }, 1000);
-          }
+
+                  return updatedData;
+                });
+              }, 1000);
+            }
           }
         });
       },
       { threshold: 0.1 }
     );
-    
 
     setObserver(newObserver);
 
@@ -79,10 +73,12 @@ export default function Friends() {
         newObserver.disconnect();
       }
     };
-  }, []);
+  }, [filteredData, 
+  pagination.itemsPerPage]);
 
   useEffect(() => {
     if (observer) {
+      observer.disconnect();
       filteredData.forEach((_, index) => {
         const ref = rowRefs.current[index];
         if (ref) {

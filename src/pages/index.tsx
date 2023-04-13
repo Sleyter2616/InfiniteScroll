@@ -1,19 +1,4 @@
-import React, { useState } from 'react';
-import Header from '../components/Header';
-import HomePage from '../components/HomePage';
-import SideNavbar from '../components/SideNavbar';
-import Layout from '@/components/Layout';
+// index.js or index.tsx
+import Home from './home';
 
-
-
-export default function Home() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'friends'>('home');
-
-  return (
-    <Layout>
-      <Header currentPage={currentPage} />
-      <HomePage currentPage={currentPage} />
-      <SideNavbar  />
-      </Layout>
-  );
-}
+export default Home;

@@ -16,12 +16,12 @@ const FriendsDisplay: React.FC<FriendsDisplayProps> = ({ data, rowRefs , batchSi
   return (
     <div className={styles.container}>
       {data.map((friend, index) => {
-        const isFirstElementOfBatch = (index) % batchSize === 0;
+      
         const rowContent = (
           <div 
           key={index} 
           className={styles.row} 
-          ref={isFirstElementOfBatch ? (el) => (rowRefs.current[index] = el) : null}
+          ref={(el) => (rowRefs.current[index] = el)}
           data-index={index}>
             <div className={styles.rowContent}>
             {friend.loading ? (
@@ -50,7 +50,7 @@ const FriendsDisplay: React.FC<FriendsDisplayProps> = ({ data, rowRefs , batchSi
         return friend.loading ? (
           <React.Fragment key={index}>{rowContent}</React.Fragment>
         ) : (
-          <Link key={index} href={`/friend/${index}`}>
+          <Link key={index} href={`/friend/${friend.id-1}`}>
               {rowContent}
           </Link>
         );
