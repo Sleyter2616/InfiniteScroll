@@ -16,14 +16,14 @@ export default function Friends() {
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
   const rowRefs = useRef<(HTMLElement | null)[]>([]);
 
-  const handleApplyFilters = (closeFriends: boolean, reallyCloseFriends: boolean) => {
+  const handleApplyFilters = (closeFriends: boolean, superCloseFriends: boolean) => {
     let newData = mockData;
 
     if (closeFriends) {
       newData = newData.filter((friend) => friend.friendLevel === 'Close');
     }
 
-    if (reallyCloseFriends) {
+    if (superCloseFriends) {
       newData = newData.filter((friend) => friend.friendLevel === 'Super Close');
     }
 

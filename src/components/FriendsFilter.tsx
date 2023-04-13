@@ -4,16 +4,16 @@ import FilterPopup from './Filter/FilterPopup';
 import FilterIcon from './Filter/FilterIcon';
 
 interface FriendsFilterProps {
-  onApplyFilters: (closeFriends: boolean, reallyCloseFriends: boolean) => void;
+  onApplyFilters: (closeFriends: boolean, superCloseFriends: boolean) => void;
 }
 
 const FriendsFilter: React.FC<FriendsFilterProps> = ({ onApplyFilters }) => {
   const [filterActive, setFilterActive] = useState(false);
-  const [appliedFilters, setAppliedFilters] = useState({ closeFriends: false, reallyCloseFriends: false });
+  const [appliedFilters, setAppliedFilters] = useState({ closeFriends: false, superCloseFriends: false });
 
-  const handleApplyFilters = (closeFriends: boolean, reallyCloseFriends: boolean) => {
-    setAppliedFilters({ closeFriends, reallyCloseFriends });
-    onApplyFilters(closeFriends, reallyCloseFriends);
+  const handleApplyFilters = (closeFriends: boolean, superCloseFriends: boolean) => {
+    setAppliedFilters({ closeFriends, superCloseFriends });
+    onApplyFilters(closeFriends, superCloseFriends);
   };
   const activeFilterCount = Object.values(appliedFilters).filter((value) => value).length;
   const handleFilterClick = () => {
@@ -22,8 +22,8 @@ const FriendsFilter: React.FC<FriendsFilterProps> = ({ onApplyFilters }) => {
 
   const handleClearAll = () => {
     setFilterActive(false);
-    setAppliedFilters({ closeFriends: false, reallyCloseFriends: false });
-    onApplyFilters(false, false);
+    setAppliedFilters({ closeFriends: false, superCloseFriends: false });
+     onApplyFilters(false, false);
   };
   const handleClose = () => {
     setFilterActive(false);

@@ -4,31 +4,31 @@ import CloseButton from './CloseButton';
 
 interface FilterPopupProps {
   visible: boolean;
-  onApplyFilters: (closeFriends: boolean, reallyCloseFriends: boolean) => void;
+  onApplyFilters: (closeFriends: boolean, superCloseFriends: boolean) => void;
   onClose: () => void;
 }
 
 const FilterPopup: React.FC<FilterPopupProps> = ({  visible, onApplyFilters, onClose  }) => {
   const [closeFriends, setCloseFriends] = useState(false);
-  const [reallyCloseFriends, setReallyCloseFriends] = useState(false);
+  const [superCloseFriends, setSuperCloseFriends] = useState(false);
 
   if (!visible) return null;
 
   const handleApply = () => {
-    onApplyFilters(closeFriends, reallyCloseFriends);
+    onApplyFilters(closeFriends, superCloseFriends);
     onClose();
   };
 
   const handleClearAll = () => {
     setCloseFriends(false);
-    setReallyCloseFriends(false);
+    setSuperCloseFriends(false);
   };
 
   return (
     <div className={styles.container}>
     <div className={styles.topSection}>
-      <button  onClick={handleClearAll}  className={`${styles.clearAll} ${closeFriends || reallyCloseFriends ? styles.clearAllActive : ''}`}
-      disabled={!closeFriends && !reallyCloseFriends }>Clear all</button>
+      <button  onClick={handleClearAll}  className={`${styles.clearAll} ${closeFriends || superCloseFriends ? styles.clearAllActive : ''}`}
+      disabled={!closeFriends && !superCloseFriends }>Clear all</button>
       <div className={styles.filterTitle}>Filter</div>
       <div className={styles.closeButton} onClick={onClose}><CloseButton/></div>
     </div>
@@ -46,12 +46,12 @@ const FilterPopup: React.FC<FilterPopupProps> = ({  visible, onApplyFilters, onC
           </div>
         </div>
         <div className={styles.section}>
-          <div className={styles.checkboxTitle}>Really Close Friends</div>
+          <div className={styles.checkboxTitle}>Super Close Friends</div>
           <div
-            className={`${styles.checkbox} ${reallyCloseFriends ? styles.checkedCheckbox : ''}`}
-            onClick={() => setReallyCloseFriends(!reallyCloseFriends)}
+            className={`${styles.checkbox} ${superCloseFriends ? styles.checkedCheckbox : ''}`}
+            onClick={() => setSuperCloseFriends(!superCloseFriends)}
           >
-            {reallyCloseFriends && <span className={styles.checkmark}>&#10003;</span>}
+            {superCloseFriends && <span className={styles.checkmark}>&#10003;</span>}
           </div>
           </div>
 

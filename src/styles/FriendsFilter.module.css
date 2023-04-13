@@ -12,6 +12,7 @@
     background-color: transparent;
     height: 37px;
     width: 59px;
+    border: 1px solid #ABABAB;
     border-radius: 30px;
     padding: 8px;
     cursor: pointer;
